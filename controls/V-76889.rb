@@ -44,9 +44,9 @@ control 'V-76889' do
 
   iis_modules = command('Get-WebConfiguration  system.webServer/globalModules/*').stdout.strip
 
-  unless iis_modules.include?('CgiMowdule')
+  unless iis_modules.include?('CgiModule')
     impact 0.0
-    desc 'CgiMowdule not installed hence the control not applicable'
+    desc 'CgiModule not installed hence the control not applicable'
   end
 
   describe 'Manual review of website is needed' do
